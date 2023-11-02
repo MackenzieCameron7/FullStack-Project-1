@@ -1,15 +1,17 @@
-import InventoryCards from "./InventoryCard";
+import InventoryCard from "./InventoryCard";
 
-export default function InventoryContainer({products}){
+export default function InventoryContainer({productsArray, addToCart}){
 return(
 
     <div className="Inventory-Container">
-    {products.map((product, item)=>
-    <InventoryCards 
+    {productsArray.map((item)=>
+    <InventoryCard 
     image = {item.image}
     name = {item.productName}
     brand = {item.brand}
     price = {item.quantity}
+    key = {item.id}
+    addToCart = {addToCart}
     />
     )}
     </div>    
