@@ -8,13 +8,17 @@ export default function GroceriesApp(){
 
     const [cartList, setCartList] = useState([]);
 
-    const addToCart
-    
+    function addToCart({id, productName, productPrice}){
+        return setCartList((prevCart) => [...prevCart, {id, productName, productPrice}])
+    }
+
     return(
         <div className="GroceriesApp-Container">
             <h1>Groceries App</h1>
-            <InventoryContainer productsArray = {products}/>
-            {(cartList.length() === 0) ? <h2>Your cart is empty</h2> : <CartListContainer cartArray = {cartList} />}
+            <InventoryContainer productsArray = {products} addToCart={addToCart}/>
+            <CartListContainer cartArray = {cartList}/>
        </div>
     )
 }
+
+//<CartListContainer cartArray = {cartList} />
