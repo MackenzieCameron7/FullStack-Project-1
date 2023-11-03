@@ -4,6 +4,7 @@ import GroceriesApp from "./GroceriesApp";
 
 function App() {
   return <>
+  <h1>Groceries App</h1>
     <GroceriesApp />
   </>;
 }

@@ -14,11 +14,10 @@ export default function GroceriesApp(){
 
     return(
         <div className="GroceriesApp-Container">
-            <h1>Groceries App</h1>
             <InventoryContainer productsArray = {products} addToCart={addToCart}/>
-            <CartListContainer cartArray = {cartList}/>
+            {(cartList.Length === 0) ? <h2>Your cart is empty</h2> : <CartListContainer cartArray = {cartList}/>}
        </div>
     )
 }
-
+//{(cartList.Length() === 0) ? <h2>Your cart is empty</h2> : <CartListContainer cartArray = {cartList}/>}
 //<CartListContainer cartArray = {cartList} />
