@@ -9,7 +9,8 @@ return(
     image = {item.image}
     name = {item.productName}
     brand = {item.brand}
-    price = {item.quantity}
+    quantity = {item.quantity}
+    price = {item.price}
     key = {item.id}
     addToCart = {addToCart}
     />
