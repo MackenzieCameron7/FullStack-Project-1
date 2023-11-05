@@ -8,8 +8,8 @@ export default function InventoryCard({image, name, brand, quantity, price, addT
             <p>{price}</p>
             <button type="button" onClick={()=>addToCart({
                 id: crypto.randomUUID(),
-                productName: name,
-                productPrice: price
+                name: name,
+                price: price
             })}>Add to Cart</button>
         </div>
     )

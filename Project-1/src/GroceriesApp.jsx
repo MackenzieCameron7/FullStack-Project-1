@@ -8,8 +8,8 @@ export default function GroceriesApp(){
 
     const [cartList, setCartList] = useState([]);
 
-    function addToCart({id, productName, productPrice}){
-        return setCartList((prevCart) => [...prevCart, {id, productName, productPrice}])
+    function addToCart({id, name, price}){
+        return setCartList((prevCart) => [...prevCart, {id, name, price}])
     }
 
     return(
