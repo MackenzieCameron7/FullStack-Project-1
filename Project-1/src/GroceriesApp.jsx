@@ -17,12 +17,7 @@ export default function GroceriesApp(){
 
     // Remove Item From Cart function... filter cartList[] by id and remove it from our new array.
     function removeFromCart({id}){
-        console.log(id)
-        //return setCartList((prevCart) => prevCart.filter((cartArray) => cartArray.id !== id));
-        return setCartList((prevCart) => prevCart.filter((cartArray) => {
-            console.log(cartArray.id);
-            cartArray.id !== id 
-        }));
+        return setCartList((prevCart) => prevCart.filter((cartArray) => {cartArray.id !== id }));
     }
 
     // Clear Cart function... Setting cartList[] to empty.
@@ -32,7 +27,7 @@ export default function GroceriesApp(){
 
     // Buy Cart function... Calculates the total price of all items in our cart.
     function calculateTotalPrice(cartList){
-       let total;
+       let total = 0;
        cartList.forEach(element => {
         total += element.price;
        })
@@ -43,7 +38,13 @@ export default function GroceriesApp(){
         // Checks if cart length is 0. if True: display a message to say your cart is empty. if False: Display cart items and clear/buy buttons
         <div className="GroceriesApp-Container">
             <InventoryContainer productsArray = {products} addToCart={addToCart}/>
-            {(cartList.length === 0) ? <h1>Your cart is empty</h1> : <CartListContainer cartArray = {cartList} removeFromCart={removeFromCart} clearCart={clearCart} totalPrice={totalPrice}/>}
+            {(cartList.length === 0) ? <h1>Your cart is empty</h1> : 
+            <CartListContainer 
+            cartArray = {cartList} 
+            removeFromCart={removeFromCart} 
+            clearCart={clearCart} 
+            totalPrice={totalPrice} 
+            />}
        </div>
     )
 }
