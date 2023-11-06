@@ -17,7 +17,12 @@ export default function GroceriesApp(){
 
     // Remove Item From Cart function... filter cartList[] by id and remove it from our new array.
     function removeFromCart({id}){
-        return setCartList((prevCart) => prevCart.filter((cartArray) => cartArray.id !== id));
+        console.log(id)
+        //return setCartList((prevCart) => prevCart.filter((cartArray) => cartArray.id !== id));
+        return setCartList((prevCart) => prevCart.filter((cartArray) => {
+            console.log(cartArray.id);
+            cartArray.id !== id 
+        }));
     }
 
     // Clear Cart function... Setting cartList[] to empty.

@@ -8,6 +8,7 @@ export default function CartListContainer({cartArray, removeFromCart, clearCart,
             key = {item.id}
             name = {item.name}
             price = {item.price}
+            id = {item.id}
             removeFromCart={removeFromCart}
             />
             )}
